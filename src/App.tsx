@@ -1,9 +1,10 @@
 import React from 'react';
+import WeekCalendar from './components/WeekCalendar';
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <>
+      <WeekCalendar />
+    </>
   );
 }
 

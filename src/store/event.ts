@@ -34,3 +34,7 @@ export const eventSlice = createSlice({
         },
     },
 });
+
+export const { addEvent, removeEvent } = eventSlice.actions;
+export const events = (state: RootState) => state.event;
+export default eventSlice.reducer;
