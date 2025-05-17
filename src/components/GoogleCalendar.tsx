@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-
+import WeekCalendar from "./WeekCalendar";
 const GoogleCalendar = () => {
     const [sideOpen, setSideOpen] = useState(true);
     const [weekView, setWeekView] = useState(true);
@@ -18,8 +18,13 @@ const GoogleCalendar = () => {
                 setWeekView={setWeekView}
             />
             
-            <div>
-
+            <div
+                className={`md:grid ${sideOpen ? "md:grid-cols-6" : "md:grid-cols-5"}`}
+            >
+                <div className={sideOpen ? "block" : "hidden"}>
+                
+                </div>
+                {weekView ? <WeekCalendar /> : <MonthCalendar /> }
             </div>
         </>
     )
